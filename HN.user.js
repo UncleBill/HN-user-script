@@ -12,8 +12,8 @@
 // @license MIT License
 // ==/UserScript==
 
-var nodeSelector = "tr:nth-child(3n+1) td:nth-child(3n+3)";
-var titles = document.querySelectorAll( nodeSelector );
+var NODESELECTOR = "tr:nth-child(3n+1) td:nth-child(3n+3)";
+var titles = document.querySelectorAll( NODESELECTOR );
 var ll = titles.length;
 
 
