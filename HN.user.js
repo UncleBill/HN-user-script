@@ -43,11 +43,19 @@ var handleScore = function( num ){
     return news;
 }
 
+var styleTag = document.createElement("style");
+var headTag = document.getElementsByTagName("head")[0];
+styleTag.setAttribute("type","text/css");
+styleTag.textContent=".sizer{-webkit-transition:all 0.2s;}"
+headTag.appendChild( styleTag );
+
 for( var i = 1;i < ll; ++i ){       // var i = 1; --> ignore the first match
     var _title = titles[i];
     var _scoreNode = _title.parentElement.nextSibling.querySelector('span');
     var _score = parseInt( _scoreNode.textContent, 10 );
     var thisNews = handleScore( _score );
+    var cn = _title.className.replace( "sizer","" ) + " sizer";
+    _title.className = cn.replace(/\s{2,}/g," ");
     _title.style.fontSize = thisNews.fontSize;  // fontSize
     _title.querySelector( 'a' ).style.color = thisNews.color;   // color
 }
