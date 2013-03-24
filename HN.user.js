@@ -1,3 +1,17 @@
+// ==UserScript==
+// @name Hacker News Sizer
+// @description Give popular news big font size
+// @namespace https://github.com/UncleBill/HN-user-script
+// @include http://news.ycombinator.com/
+// @include https://news.ycombinator.com/
+// @homepageURL http://userscripts.org/scripts/show/25105
+// @updateURL https://raw.github.com/UncleBill/HN-user-script/master/HN.user.js
+// @author UncleBill
+// @version 0.01
+// @date 2013-03-24
+// @license MIT License
+// ==/UserScript==
+
 var nodeSelector = "tr:nth-child(3n+1) td:nth-child(3n+3)";
 var titles = document.querySelectorAll( nodeSelector );
 var ll = titles.length;
@@ -36,3 +50,4 @@ for( var i = 1;i < ll; ++i ){       // var i = 1; --> ignore the first match
     _title.style.fontSize = thisNews.fontSize;  // fontSize
     _title.style.color = thisNews.color;      // color
 }
+
