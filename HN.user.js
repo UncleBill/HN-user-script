@@ -22,21 +22,22 @@ var handleScore = function( num ){
         color :"",           // normal
         fontSize :"10pt"
     }
-    if( num > 1000 ){
+    if( num > 500 ){
         news.color = "#f00";         // superHit
         news.fontSize = "25pt";
     }
-    else if( num > 500 ){
-        news.color = "#f66";         // hugeNews
-        news.fontSize = "20pt";
-    }
-    else if( num > 200 ){
-        news.color = "#f99";         // bigNews
-        news.fontSize = "15pt";
-    }
+    //else if( num < 40 ){
+        //;           // use default
+    //}
     else{
-        //news = news;
-        ;
+        var c = ~~ ( num % 500 / 500 * 256 );
+        while( c.length < 2 ){
+            c = "0" + c;
+        }
+        var f = ~~ ( num % 500 / 500 * 25 )+10;
+        news.color = "#" + c + "0000";
+        console.log( c );
+        news.fontSize = f + "pt";
     }
 
     return news;
@@ -48,6 +49,5 @@ for( var i = 1;i < ll; ++i ){       // var i = 1; --> ignore the first match
     var _score = parseInt( _scoreNode.textContent, 10 );
     var thisNews = handleScore( _score );
     _title.style.fontSize = thisNews.fontSize;  // fontSize
-    _title.style.color = thisNews.color;      // color
+    _title.querySelector( 'a' ).style.color = thisNews.color;   // color
 }
-
