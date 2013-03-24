@@ -4,7 +4,7 @@
 // @namespace https://github.com/UncleBill/HN-user-script
 // @include http://news.ycombinator.com/
 // @include https://news.ycombinator.com/
-// @homepageURL http://userscripts.org/scripts/show/25105
+// @homepageURL https://github.com/UncleBill/HN-user-script
 // @updateURL https://raw.github.com/UncleBill/HN-user-script/master/HN.user.js
 // @author UncleBill
 // @version 0.01
