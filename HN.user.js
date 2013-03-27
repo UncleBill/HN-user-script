@@ -19,24 +19,21 @@ var ll = titles.length;
 
 var handleScore = function( num ){
     var news = {
-        color :"",           // normal
+        color :"",                  // normal
         fontSize :"10pt"
     }
     if( num > 500 ){
         news.color = "#f00";         // superHit
         news.fontSize = "25pt";
     }
-    //else if( num < 40 ){
-        //;           // use default
-    //}
     else{
-        var c = ~~ ( num % 500 / 500 * 256 );
+        var c = ~~ ( num % 500 / 500 * 255 );
+        c = c.toString( 16 );
         while( c.length < 2 ){
             c = "0" + c;
         }
         var f = ~~ ( num % 500 / 500 * 25 )+10;
         news.color = "#" + c + "0000";
-        console.log( c );
         news.fontSize = f + "pt";
     }
 
