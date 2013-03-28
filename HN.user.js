@@ -12,8 +12,8 @@
 // @license MIT License
 // ==/UserScript==
 
-var NODESELECTOR = "tr:nth-child(3n+1) td:nth-child(3n+3)";
-var titles = document.querySelectorAll( NODESELECTOR );
+var NODE_SELECTOR = "tr:nth-child(3n+1) td:nth-child(3n+3)";
+var titles = document.querySelectorAll( NODE_SELECTOR );
 var ll = titles.length;
 
 
@@ -24,7 +24,7 @@ var handleScore = function( num ){
     }
     if( num > 500 ){
         news.color = "#f00";         // superHit
-        news.fontSize = "25pt";
+        news.fontSize = "30pt";
     }
     else{
         var c = ~~ ( num % 500 / 500 * 255 );
@@ -32,7 +32,7 @@ var handleScore = function( num ){
         while( c.length < 2 ){
             c = "0" + c;
         }
-        var f = ~~ ( num % 500 / 500 * 25 )+10;
+        var f = ~~ ( num % 500 / 500 * 20 )+10;
         news.color = "#" + c + "0000";
         news.fontSize = f + "pt";
     }
