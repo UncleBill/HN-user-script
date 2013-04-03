@@ -2,8 +2,8 @@
 // @name Hacker News Sizer
 // @description Give popular news big font size
 // @namespace https://github.com/UncleBill/HN-user-script
-// @include http://news.ycombinator.com/
-// @include https://news.ycombinator.com/
+// @include http://news.ycombinator.com/*
+// @include https://news.ycombinator.com/*
 // @homepageURL https://github.com/UncleBill/HN-user-script
 // @updateURL https://raw.github.com/UncleBill/HN-user-script/master/HN.user.js
 // @author UncleBill
@@ -49,7 +49,7 @@ headTag.appendChild( styleTag );
 for( var i = 1;i < ll; ++i ){       // var i = 1; --> ignore the first match
     var _title = titles[i];
     var _scoreNode = _title.parentElement.nextSibling.querySelector('span');
-    var _score = parseInt( _scoreNode.textContent, 10 );
+    var _score = _scoreNode && parseInt( _scoreNode.textContent, 10 );
     var thisNews = handleScore( _score );
     var cn = _title.className.replace( "sizer","" ) + " sizer";
     _title.className = cn.replace(/\s{2,}/g," ");
